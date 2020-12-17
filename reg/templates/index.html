@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <header>
+        {% if messages %}
+        <ul></ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </header>
+ 
+    <div>
+        <form action="/" method="POST">
+            {% csrf_token %}
+            
+            <h1>
+                Add a New Show
+            </h1>
+                <label >First Name: </label>
+                <input id="first_name"  type="text" name="first_name"><br>
+                <label class="label">Last Name: </label>
+                <input type="text" name="last_name">
+                <label class="label">Email: </label>
+                <input type= "text" name="email"><br>
+                <label>PassWord: </label><br>
+                <input type="text" name="password"><br>
+                <label>Retype PassWord: </label>
+                <input type="text" name= "repassword">
+
+                
+            <button type="submit" >Create</button>
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>
